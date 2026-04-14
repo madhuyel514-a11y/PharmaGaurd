@@ -1,0 +1,45 @@
+{
+  "patient_id": "PATIENT_WARFARIN_001",
+  "drug": "WARFARIN",
+  "timestamp": "2026-03-13T10:30:00Z",
+  "risk_assessment": {
+    "risk_label": "Adjust Dosage",
+    "confidence_score": 0.92,
+    "severity": "high"
+  },
+  "pharmacogenomic_profile": {
+    "primary_gene": "CYP2C9",
+    "diplotype": "*2/*3",
+    "phenotype": "PM",
+    "detected_variants": [
+      {
+        "rsid": "rs1799853",
+        "gene": "CYP2C9",
+        "consequence": "Reduced function (*2 allele)"
+      },
+      {
+        "rsid": "rs1057910",
+        "gene": "CYP2C9",
+        "consequence": "Reduced function (*3 allele)"
+      }
+    ]
+  },
+  "clinical_recommendation": {
+    "action": "Significantly lower starting dose, frequent INR monitoring",
+    "cpic_guideline": "Use lower starting dose and reduce maintenance dose due to poor metabolism",
+    "monitoring": "Frequent INR monitoring recommended; consider alternative anticoagulant therapy"
+  },
+  "llm_generated_explanation": {
+    "summary": "Patient with CYP2C9 poor metabolizer phenotype from *2/*3 diplotype. Warfarin metabolism is significantly reduced, creating an accumulation risk.",
+    "biological_mechanism": "The CYP2C9 *2 and *3 alleles encode enzymes with reduced catalytic activity. Both alleles produce substantially diminished warfarin metabolism, leading to prolonged drug effect and increased bleeding risk.",
+    "variant_effects": {
+      "rs1799853": "CYP2C9 *2 allele - reduced enzymatic activity",
+      "rs1057910": "CYP2C9 *3 allele - reduced enzymatic activity"
+    }
+  },
+  "quality_metrics": {
+    "vcf_parsing_success": true,
+    "variant_confidence": 0.95,
+    "completeness": 1.0
+  }
+}

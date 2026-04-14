@@ -1,0 +1,39 @@
+{
+  "patient_id": "PATIENT_FLUOROURACIL_001",
+  "drug": "FLUOROURACIL",
+  "timestamp": "2026-03-13T10:45:00Z",
+  "risk_assessment": {
+    "risk_label": "Toxic",
+    "confidence_score": 0.98,
+    "severity": "critical"
+  },
+  "pharmacogenomic_profile": {
+    "primary_gene": "DPYD",
+    "diplotype": "*2A/*2A",
+    "phenotype": "PM",
+    "detected_variants": [
+      {
+        "rsid": "rs3918290",
+        "gene": "DPYD",
+        "consequence": "DPYD deficiency (*2A allele)"
+      }
+    ]
+  },
+  "clinical_recommendation": {
+    "action": "CONTRAINDICATED - do not use or use alternative chemotherapy",
+    "cpic_guideline": "Do not use fluorouracil; select alternative chemotherapy",
+    "monitoring": "DPYD poor metabolizer phenotype requires avoidance of fluorouracil-based therapy"
+  },
+  "llm_generated_explanation": {
+    "summary": "Patient with DPYD poor metabolizer phenotype from *2A/*2A diplotype. Fluorouracil metabolism is severely impaired, creating life-threatening toxicity risk.",
+    "biological_mechanism": "The DPYD *2A allele results in complete loss of dihydropyrimidine dehydrogenase enzyme function. This enzyme is critical for fluorouracil metabolism. Complete enzyme deficiency leads to severe, potentially fatal, drug accumulation and toxicity.",
+    "variant_effects": {
+      "rs3918290": "DPYD *2A allele - complete loss of enzyme function (poor metabolizer)"
+    }
+  },
+  "quality_metrics": {
+    "vcf_parsing_success": true,
+    "variant_confidence": 0.98,
+    "completeness": 1.0
+  }
+}

@@ -1,0 +1,13 @@
+##fileformat=VCFv4.2
+##fileDate=20260213
+##reference=GRCh37
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Read depth">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele frequency">
+##INFO=<ID=Gene,Number=1,Type=String,Description="Gene name">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE1
+22	42521919	rs1065852	A	G	60	.	DP=50;AF=0.5;Gene=CYP2D6	GT	0/1
+10	96741617	rs4244285	G	A	60	.	DP=48;AF=0.5;Gene=CYP2C19	GT	0/1
+10	98296527	rs1799853	C	T	60	.	DP=45;AF=0.5;Gene=CYP2C9	GT	0/1
+12	21370874	rs11045819	T	C	60	.	DP=52;AF=0.5;Gene=SLCO1B1	GT	0/1
+6	18131034	rs1800460	G	A	60	.	DP=50;AF=0.5;Gene=TPMT	GT	0/1
+1	98348885	rs3918290	A	G	60	.	DP=55;AF=0.5;Gene=DPYD	GT	0/1

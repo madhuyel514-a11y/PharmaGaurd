@@ -1,0 +1,8 @@
+Flask==3.0.3
+Flask-CORS==4.0.0
+Flask-RESTful==0.3.10
+python-dotenv==1.0.0
+anthropic==0.7.0
+python-dateutil==2.8.2
+jsonschema==4.20.0
+requests==2.31.0

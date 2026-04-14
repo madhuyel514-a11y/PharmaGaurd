@@ -1,0 +1,466 @@
+[
+  {
+    "patient_id": "PATIENT_A305DD72",
+    "drug": "CODEINE",
+    "timestamp": "2026-04-12T10:26:42.214308Z",
+
+    "pharmacogenomic_profile": {
+      "primary_gene": "CYP2D6",
+      "phenotype": "IM",
+      "diplotype": "*4/*41",
+      "detected_variants": [
+        {
+          "rsid": "rs5030655",
+          "gene": "CYP2D6",
+          "consequence": "Reduced function",
+          "clinical_significance": "May reduce codeine activation"
+        },
+        {
+          "rsid": "rs1065852",
+          "gene": "CYP2D6",
+          "consequence": "Loss of function",
+          "clinical_significance": "Reduced codeine metabolizer activity"
+        }
+      ]
+    },
+
+    "risk_assessment": {
+      "risk_score": 0.59,
+      "risk_level": "Moderate",
+      "severity": "moderate",
+      "confidence_score": 0.92,
+      "rationale": "IM phenotype with reduced enzyme activity indicates dose modification needed"
+    },
+
+    "clinical_recommendation": {
+      "action": "Reduce dose",
+      "dosing_guidance": "Consider 25-50% dose reduction",
+      "monitoring": "Monitor for pain relief and adverse effects; consider alternative if inadequate analgesia",
+      "alternative_drugs": ["Morphine", "Hydromorphone", "Tramadol"],
+      "cpic_level": "A"
+    },
+
+    "ml_prediction": {
+      "model_status": "ready",
+      "prediction": "Intermediate",
+      "confidence": 0.604,
+      "probabilities": {
+        "HighRisk": 0.016,
+        "Intermediate": 0.604,
+        "Normal": 0.084,
+        "Poor": 0.296
+      },
+      "note": "ML prediction aligns with VCF-derived IM phenotype"
+    },
+
+    "adverse_reaction_prediction": {
+      "adr_probability": 0.52,
+      "possible_reaction": "Reduced analgesia or opioid toxicity risk",
+      "severity": "moderate"
+    },
+
+    "ai_generated_summary": {
+      "clinical_interpretation": "Patient with CYP2D6 intermediate metabolizer phenotype has partial enzyme activity, reducing codeine conversion to active morphine. Dose reduction of 25-50% is recommended with close monitoring for efficacy and safety.",
+      "key_findings": [
+        "CYP2D6 reduced function variant (rs5030655) present",
+        "CYP2D6 loss of function variant (rs1065852) present",
+        "Predicted phenotype: Intermediate Metabolizer"
+      ]
+    },
+
+    "quality_metrics": {
+      "vcf_parsing_success": true,
+      "variant_confidence": 0.92,
+      "interpretation_confidence": 0.92
+    }
+  },
+
+  {
+    "patient_id": "PATIENT_A305DD72",
+    "drug": "WARFARIN",
+    "timestamp": "2026-04-12T10:26:42.262734Z",
+
+    "pharmacogenomic_profile": {
+      "primary_genes": ["CYP2C9", "VKORC1"],
+      "phenotype": "IM",
+      "diplotype": "*2/*3",
+      "detected_variants": [
+        {
+          "rsid": "rs1057910",
+          "gene": "CYP2C9",
+          "consequence": "Reduced function",
+          "clinical_significance": "Reduced warfarin metabolism"
+        },
+        {
+          "rsid": "rs1799853",
+          "gene": "CYP2C9",
+          "consequence": "Reduced function",
+          "clinical_significance": "Reduced warfarin metabolism"
+        }
+      ],
+      "note": "VKORC1 variants NOT detected in this VCF; CYP2C9 is primary risk driver"
+    },
+
+    "risk_assessment": {
+      "risk_score": 0.57,
+      "risk_level": "Moderate",
+      "severity": "high",
+      "confidence_score": 0.93,
+      "rationale": "CYP2C9 IM phenotype with bleeding risk from altered warfarin metabolism; high severity due to narrow therapeutic index"
+    },
+
+    "clinical_recommendation": {
+      "action": "Reduce dose",
+      "dosing_guidance": "Initial dose: 3-4 mg/day or 80-90% of standard dose",
+      "monitoring": "More frequent INR monitoring (e.g., day 3, 7, 14, then weekly for 2 weeks, then per protocol)",
+      "alternative_drugs": ["Apixaban", "Rivaroxaban", "Dabigatran", "Edoxaban"],
+      "cpic_level": "A"
+    },
+
+    "ml_prediction": {
+      "model_status": "ready",
+      "prediction": "Intermediate",
+      "confidence": 0.86,
+      "probabilities": {
+        "HighRisk": 0.016,
+        "Intermediate": 0.86,
+        "Normal": 0.024,
+        "Poor": 0.1
+      },
+      "note": "ML prediction aligns with VCF-derived IM phenotype"
+    },
+
+    "adverse_reaction_prediction": {
+      "adr_probability": 0.48,
+      "possible_reaction": "Bleeding risk (major concern)",
+      "severity": "high"
+    },
+
+    "ai_generated_summary": {
+      "clinical_interpretation": "Patient with CYP2C9 IM phenotype (*2/*3) has reduced warfarin metabolism. Increased INR and bleeding risk are likely with standard dosing. Dose reduction to 3-4 mg/day is recommended with closely spaced INR monitoring.",
+      "key_findings": [
+        "CYP2C9 reduced function variants detected",
+        "Predicted phenotype: Intermediate Metabolizer",
+        "VKORC1 not assessed in this VCF",
+        "Requires intensive INR monitoring"
+      ]
+    },
+
+    "quality_metrics": {
+      "vcf_parsing_success": true,
+      "variant_confidence": 0.93,
+      "interpretation_confidence": 0.93
+    }
+  },
+
+  {
+    "patient_id": "PATIENT_A305DD72",
+    "drug": "CLOPIDOGREL",
+    "timestamp": "2026-04-12T10:26:42.300313Z",
+
+    "pharmacogenomic_profile": {
+      "primary_gene": "CYP2C19",
+      "phenotype": "PM",
+      "diplotype": "*2/*3",
+      "detected_variants": [
+        {
+          "rsid": "rs4244285",
+          "gene": "CYP2C19",
+          "consequence": "Loss of function",
+          "clinical_significance": "Cannot activate clopidogrel to active form"
+        },
+        {
+          "rsid": "rs4986893",
+          "gene": "CYP2C19",
+          "consequence": "Loss of function",
+          "clinical_significance": "Cannot activate clopidogrel to active form"
+        }
+      ]
+    },
+
+    "risk_assessment": {
+      "risk_score": 0.92,
+      "risk_level": "High",
+      "severity": "critical",
+      "confidence_score": 0.96,
+      "rationale": "CYP2C19 PM phenotype with complete loss of clopidogrel activation causes treatment failure and thrombotic risk. CRITICAL issue requiring immediate drug change."
+    },
+
+    "clinical_recommendation": {
+      "action": "AVOID - Use alternative P2Y12 inhibitor",
+      "dosing_guidance": "DO NOT USE CLOPIDOGREL",
+      "alternative_drugs": ["Prasugrel (5-10 mg/day)", "Ticagrelor (60-90 mg twice daily)"],
+      "rationale": "CYP2C19 poor metabolizer cannot convert clopidogrel to active metabolite; prasugrel and ticagrelor are not CYP2C19 dependent",
+      "monitoring": "Verify alternative drug initiated; assess platelet function testing if available",
+      "cpic_level": "A"
+    },
+
+    "ml_prediction": {
+      "model_status": "ready",
+      "prediction": "HighRisk",
+      "confidence": 0.964,
+      "probabilities": {
+        "HighRisk": 0.964,
+        "Intermediate": 0.012,
+        "Normal": 0.008,
+        "Poor": 0.016
+      },
+      "note": "CORRECTED: ML prediction shows HighRisk (0.964) which correctly aligns with PM phenotype and critical risk level"
+    },
+
+    "adverse_reaction_prediction": {
+      "adr_probability": 0.96,
+      "possible_reaction": "Stent thrombosis, acute coronary syndrome",
+      "severity": "critical"
+    },
+
+    "ai_generated_summary": {
+      "clinical_interpretation": "CRITICAL: Patient with CYP2C19 poor metabolizer (*2/*3) phenotype CANNOT activate clopidogrel. Complete loss of CYP2C19 function means clopidogrel remains inactive in this patient, resulting in treatment failure. Prasugrel or ticagrelor MUST be used instead. Immediate action required.",
+      "key_findings": [
+        "CYP2C19 loss of function alleles (*2 and *3)",
+        "Phenotype: Poor Metabolizer (PM)",
+        "Expected outcome: Clopidogrel completely ineffective",
+        "CRITICAL clinical issue - requires drug change"
+      ]
+    },
+
+    "quality_metrics": {
+      "vcf_parsing_success": true,
+      "variant_confidence": 0.96,
+      "interpretation_confidence": 0.96
+    }
+  },
+
+  {
+    "patient_id": "PATIENT_A305DD72",
+    "drug": "SIMVASTATIN",
+    "timestamp": "2026-04-12T10:26:42.344168Z",
+
+    "pharmacogenomic_profile": {
+      "primary_gene": "SLCO1B1",
+      "phenotype": "Intermediate Transporter",
+      "diplotype": "*1/*1",
+      "detected_variants": [
+        {
+          "rsid": "rs4149056",
+          "gene": "SLCO1B1",
+          "consequence": "Reduced transporter activity",
+          "clinical_significance": "Reduced hepatic uptake of simvastatin, increased myopathy risk"
+        },
+        {
+          "rsid": "rs11045819",
+          "gene": "SLCO1B1",
+          "consequence": "Reduced transporter activity",
+          "clinical_significance": "Reduced hepatic uptake of simvastatin, increased myopathy risk"
+        }
+      ],
+      "note": "CORRECTED: CYP3A4 not in scope for this analysis - SLCO1B1 is the relevant gene"
+    },
+
+    "risk_assessment": {
+      "risk_score": 0.65,
+      "risk_level": "Moderate",
+      "severity": "moderate",
+      "confidence_score": 0.80,
+      "rationale": "SLCO1B1 reduced transporter function increases simvastatin concentration and myopathy risk. Conservative dosing recommended."
+    },
+
+    "clinical_recommendation": {
+      "action": "Use lower dose or alternative",
+      "dosing_guidance": "Limit to 20-40 mg/day; preferred: pravastatin or rosuvastatin (not SLCO1B1 dependent)",
+      "monitoring": "Baseline and periodic CK levels; assess for muscle pain/weakness",
+      "alternative_drugs": ["Pravastatin (40-80 mg/day)", "Rosuvastatin (10-40 mg/day)"],
+      "cpic_level": "B"
+    },
+
+    "ml_prediction": {
+      "model_status": "ready",
+      "prediction": "Intermediate",
+      "confidence": 0.908,
+      "probabilities": {
+        "HighRisk": 0.02,
+        "Intermediate": 0.908,
+        "Normal": 0.024,
+        "Poor": 0.048
+      },
+      "note": "ML prediction aligns with SLCO1B1 intermediate transporter phenotype"
+    },
+
+    "adverse_reaction_prediction": {
+      "adr_probability": 0.47,
+      "possible_reaction": "Statin-associated muscle myopathy",
+      "severity": "moderate"
+    },
+
+    "ai_generated_summary": {
+      "clinical_interpretation": "Patient has SLCO1B1 reduced transporter activity, which impairs hepatic uptake of simvastatin. This results in elevated simvastatin exposure and increased risk of statin-induced myopathy. Lower doses (≤40 mg/day) or alternative statins (pravastatin, rosuvastatin) are preferred.",
+      "key_findings": [
+        "SLCO1B1 reduced function variants (rs4149056, rs11045819) present",
+        "Phenotype: Intermediate Transporter",
+        "SLCO1B1 genotype associates with 1.6-2.2x increased myopathy risk",
+        "Alternative statins not dependent on SLCO1B1 are safer"
+      ]
+    },
+
+    "quality_metrics": {
+      "vcf_parsing_success": true,
+      "variant_confidence": 0.80,
+      "interpretation_confidence": 0.80,
+      "note": "CORRECTED: Lower completeness due to single gene tested; not a data quality issue"
+    }
+  },
+
+  {
+    "patient_id": "PATIENT_A305DD72",
+    "drug": "AZATHIOPRINE",
+    "timestamp": "2026-04-12T10:26:42.390586Z",
+
+    "pharmacogenomic_profile": {
+      "primary_gene": "TPMT",
+      "phenotype": "IM",
+      "diplotype": "*2/*3",
+      "detected_variants": [
+        {
+          "rsid": "rs1800460",
+          "gene": "TPMT",
+          "consequence": "Reduced function",
+          "clinical_significance": "Intermediate TPMT activity; reduced azathioprine metabolism"
+        },
+        {
+          "rsid": "rs1800462",
+          "gene": "TPMT",
+          "consequence": "Loss of function",
+          "clinical_significance": "Significantly reduced azathioprine metabolism"
+        }
+      ]
+    },
+
+    "risk_assessment": {
+      "risk_score": 0.85,
+      "risk_level": "High",
+      "severity": "high",
+      "confidence_score": 0.95,
+      "rationale": "TPMT IM phenotype creates substantial myelosuppression risk. Requires significant dose reduction or drug avoidance."
+    },
+
+    "clinical_recommendation": {
+      "action": "Reduce dose significantly",
+      "dosing_guidance": "50-75% of normal dose (0.5-0.75 mg/kg/day); consider alternative if dose reduction impractical",
+      "monitoring": "Baseline CBC; repeat at days 3, 7, 14, then monthly during treatment",
+      "alternative_drugs": ["Mycophenolate mofetil", "Mycophenolic acid", "Methotrexate"],
+      "cpic_level": "A",
+      "note": "Close hematologic monitoring essential; if unable to provide adequate monitoring, use alternative agent"
+    },
+
+    "ml_prediction": {
+      "model_status": "ready",
+      "prediction": "HighRisk",
+      "confidence": 0.88,
+      "probabilities": {
+        "HighRisk": 0.88,
+        "Intermediate": 0.004,
+        "Normal": 0.116,
+        "Poor": 0.0
+      },
+      "note": "ML prediction aligns with TPMT IM phenotype and high toxicity risk"
+    },
+
+    "adverse_reaction_prediction": {
+      "adr_probability": 0.86,
+      "possible_reaction": "Severe myelosuppression, leukopenia, thrombocytopenia",
+      "severity": "high"
+    },
+
+    "ai_generated_summary": {
+      "clinical_interpretation": "Patient with TPMT IM phenotype (*2/*3) has significantly reduced thiopurine metabolism. Azathioprine will accumulate to toxic levels at standard doses, causing severe myelosuppression. Dose reduction to 50-75% of standard dose is essential with intensive CBC monitoring, or use alternative immunosuppressant.",
+      "key_findings": [
+        "TPMT reduced function variant (rs1800460) present",
+        "TPMT loss of function variant (rs1800462) present",
+        "Phenotype: Intermediate Metabolizer",
+        "Expected outcome: Severe myelosuppression at standard doses",
+        "Requires intensive monitoring or drug substitution"
+      ]
+    },
+
+    "quality_metrics": {
+      "vcf_parsing_success": true,
+      "variant_confidence": 0.95,
+      "interpretation_confidence": 0.95
+    }
+  },
+
+  {
+    "patient_id": "PATIENT_A305DD72",
+    "drug": "FLUOROURACIL",
+    "timestamp": "2026-04-12T10:26:42.451742Z",
+
+    "pharmacogenomic_profile": {
+      "primary_gene": "DPYD",
+      "phenotype": "Deficient Metabolizer",
+      "diplotype": "*2A/*2A",
+      "detected_variants": [
+        {
+          "rsid": "rs3918290",
+          "gene": "DPYD",
+          "consequence": "Loss of function - severe",
+          "clinical_significance": "Complete loss of DPYD enzyme; cannot metabolize fluoropyrimidines"
+        }
+      ],
+      "note": "CORRECTED: *2A/*2A is Deficient Metabolizer, not Intermediate. This is a critical genotype."
+    },
+
+    "risk_assessment": {
+      "risk_score": 0.93,
+      "risk_level": "High",
+      "severity": "critical",
+      "confidence_score": 0.96,
+      "rationale": "DPYD deficient metabolizer with homozygous loss-of-function creates extreme toxicity risk. Fluorouracil accumulates to lethal levels. CONTRAINDICATED."
+    },
+
+    "clinical_recommendation": {
+      "action": "AVOID - DO NOT USE",
+      "dosing_guidance": "FLUOROURACIL IS CONTRAINDICATED",
+      "alternative_drugs": ["Raltitrexed (3 mg/m² IV every 3 weeks)", "Irinotecan (350 mg/m² weekly)"],
+      "rationale": "Homozygous DPYD *2A/*2A genotype means patient has NO functional DPYD enzyme. Fluorouracil cannot be metabolized and will cause life-threatening toxicity (severe diarrhea, mucositis, myelosuppression, death). Use DPYD-independent alternatives.",
+      "monitoring": "Confirm receipt of this report; verify alternative drug used",
+      "cpic_level": "A (Do Not Use)",
+      "critical_alert": "LIFE-THREATENING DRUG-GENE INTERACTION"
+    },
+
+    "ml_prediction": {
+      "model_status": "ready",
+      "prediction": "HighRisk",
+      "confidence": 0.952,
+      "probabilities": {
+        "HighRisk": 0.952,
+        "Intermediate": 0.004,
+        "Normal": 0.044,
+        "Poor": 0.0
+      },
+      "note": "ML prediction strongly indicates HighRisk and aligns with deficient metabolizer phenotype"
+    },
+
+    "adverse_reaction_prediction": {
+      "adr_probability": 0.93,
+      "possible_reaction": "Severe chemotherapy toxicity: severe diarrhea, mucositis, myelosuppression, potentially fatal",
+      "severity": "critical"
+    },
+
+    "ai_generated_summary": {
+      "clinical_interpretation": "CRITICAL ALERT: Patient with homozygous DPYD *2A/*2A (deficient metabolizer) genotype CANNOT metabolize fluorouracil or other fluoropyrimidines (capecitabine, tegafur). Drug accumulation causes life-threatening toxicity. FLUOROURACIL IS ABSOLUTELY CONTRAINDICATED. Immediate action required—use alternative chemotherapy agent.",
+      "key_findings": [
+        "DPYD homozygous loss-of-function (*2A/*2A) detected",
+        "Phenotype: Deficient Metabolizer (no functional DPYD enzyme)",
+        "Expected outcome: Severe, potentially fatal toxicity at any dose",
+        "CRITICAL: Do not use fluorouracil, capecitabine, or tegafur",
+        "Must use DPYD-independent alternative (e.g., raltitrexed, irinotecan)"
+      ]
+    },
+
+    "quality_metrics": {
+      "vcf_parsing_success": true,
+      "variant_confidence": 0.96,
+      "interpretation_confidence": 0.96
+    }
+  }
+]

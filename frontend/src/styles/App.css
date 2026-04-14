@@ -1,0 +1,463 @@
+/* Main App Styles */
+:root {
+  /* Light mode colors */
+  --primary-color: #0066cc;
+  --primary-dark: #004999;
+  --primary-light: #3d9bff;
+  --success-color: #00a651;
+  --success-light: #e8f5e9;
+  --warning-color: #ff9800;
+  --warning-light: #fff3e0;
+  --danger-color: #d32f2f;
+  --danger-light: #ffebee;
+  --inactive-color: #8b0000;
+  --inactive-light: #ffebee;
+  --gray-light: #f5f7fa;
+  --gray-lighter: #ecf0f6;
+  --gray-medium: #b0bec5;
+  --gray-dark: #1a2332;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f7fa;
+  --bg-tertiary: #ecf0f6;
+  --text-primary: #1a2332;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --card-bg: #ffffff;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --border-radius: 20px;
+  --border-radius-lg: 24px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --glow-color: #5eb3ff;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark-mode {
+  /* Dark mode overrides */
+  --primary-color: #5eb3ff;
+  --primary-dark: #3d9bff;
+  --primary-light: #7eccff;
+  --success-color: #26c281;
+  --success-light: #1a3a2a;
+  --warning-color: #ffb84d;
+  --warning-light: #4d3200;
+  --danger-color: #ff6b6b;
+  --danger-light: #4d2626;
+  --inactive-color: #ff8080;
+  --inactive-light: #4d2626;
+  --gray-light: #2a3f5f;
+  --gray-lighter: #1a2332;
+  --gray-medium: #9ca3af;
+  --gray-dark: #e5e7eb;
+  --bg-primary: #0a0e15;
+  --bg-secondary: #11151f;
+  --bg-tertiary: #1a2332;
+  --text-primary: #e5e7eb;
+  --text-secondary: #b0bec5;
+  --border-color: rgba(94, 179, 255, 0.2);
+  --card-bg: rgba(26, 35, 50, 0.7);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 12px 48px rgba(94, 179, 255, 0.2);
+  --glow-color: #5eb3ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #e8f1ff 0%, #f0e8ff 100%);
+  transition: background 0.3s ease;
+}
+
+.dark-mode.app {
+  background: linear-gradient(135deg, #0a0e15 0%, #0f1419 50%, #1a2844 100%);
+}
+
+/* Centered Content Wrapper */
+.app > :not(.app-header) {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Header */
+.app-header {
+  background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
+  color: white;
+  padding: 3rem 2rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.dark-mode .app-header {
+  background: linear-gradient(135deg, #1a3a5f 0%, #0f1419 100%);
+  border-bottom: 2px solid #5eb3ff;
+}
+
+.app-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.header-title {
+  text-align: left;
+}
+
+.app-header h1 {
+  font-size: 2.75rem;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.app-header p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Main Content */
+.app-main {
+  flex: 1;
+  padding: 3rem 2rem;
+  width: 100%;
+  background: transparent;
+}
+
+/* Analysis Panel */
+.analysis-panel {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.input-section {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  transition: var(--transition);
+}
+
+.dark-mode .input-section {
+  background: var(--card-bg);
+}
+
+.input-section:hover {
+  box-shadow: 0 0 30px rgba(94, 179, 255, 0.3), 0 8px 32px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-color);
+  transform: translateY(-4px);
+}
+
+.input-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.selected-file,
+.selected-drugs {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  color: var(--success-color);
+  font-weight: 600;
+  background: var(--success-light);
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.dark-mode .selected-file,
+.dark-mode .selected-drugs {
+  background: var(--success-light);
+  color: #26c281;
+}
+
+.patient-id-input {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  color: var(--text-primary);
+}
+
+.dark-mode .patient-id-input {
+  background: rgba(26, 35, 50, 0.6);
+}
+
+.patient-id-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 20px rgba(94, 179, 255, 0.4), 0 0 0 3px rgba(93, 179, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Error Message */
+.error-message {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  background: var(--danger-light);
+  border-left: 5px solid var(--danger-color);
+  color: var(--danger-color);
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  animation: slideIn 0.3s ease-out;
+}
+
+.dark-mode .error-message {
+  color: #ff6b6b;
+  border-left-color: #ff6b6b;
+}
+
+/* Buttons */
+.analyze-button,
+.reset-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+.analyze-button {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: white;
+  width: 100%;
+  margin-top: 2rem;
+  box-shadow: 0 0 20px rgba(94, 179, 255, 0.3), var(--shadow-md);
+}
+
+.analyze-button:hover:not(:disabled) {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(94, 179, 255, 0.5), var(--shadow-lg);
+}
+
+.analyze-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.analyze-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.reset-button {
+  background: var(--card-bg);
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  box-shadow: var(--card-shadow);
+}
+
+.reset-button:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.reset-button:active {
+  transform: translateY(0);
+}
+
+/* Results Section */
+.results-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Footer */
+.app-footer {
+  background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  width: 100%;
+}
+
+.dark-mode .app-footer {
+  background: linear-gradient(135deg, #1a3a5f 0%, #0f1419 100%);
+  border-top: 2px solid #5eb3ff;
+}
+
+.app-footer p {
+  margin: 0;
+}
+
+/* Empty States */
+.results-empty {
+  background: var(--card-bg);
+  padding: 3rem;
+  border-radius: var(--border-radius-lg);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  box-shadow: var(--card-shadow);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-main {
+    padding: 2rem 1.5rem;
+  }
+
+  .analysis-panel {
+    max-width: 100%;
+  }
+
+  .input-section {
+    padding: 1.5rem;
+  }
+
+  .app-header {
+    padding: 2rem 1.5rem;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .header-title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .theme-toggle {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    max-width: 100%;
+  }
+
+  .app-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .app-header p {
+    font-size: 0.9rem;
+  }
+
+  .input-section {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .analyze-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
